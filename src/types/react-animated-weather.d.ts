@@ -1,4 +1,4 @@
 declare module 'react-animated-weather' {
-  const ReactAnimatedWeather: any;
+  const ReactAnimatedWeather: unknown;
   export default ReactAnimatedWeather;
 }
