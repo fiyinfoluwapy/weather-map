@@ -1,5 +1,5 @@
 export async function getWeatherData(cityName: string) {
-  const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
+  const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API
   const baseUrl = 'https://api.openweathermap.org/data/2.5/forecast'
 
   const url = `${baseUrl}?q=${encodeURIComponent(cityName)}&units=metric&appid=${apiKey}`
