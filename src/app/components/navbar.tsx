@@ -16,6 +16,7 @@ type NavbarProps = {
   onCitySelect: (city: City) => void
 }
 
+// Safe check for client render
 function useHasMounted() {
   const [mounted, setMounted] = useState(false)
   useEffect(() => {
@@ -28,7 +29,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onCitySelect }) => {
   const hasMounted = useHasMounted()
   const [searchTerm, setSearchTerm] = useState('')
   const [isSearchOpen, setIsSearchOpen] = useState(false)
-  const [loading, setLoading] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
@@ -41,7 +41,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onCitySelect }) => {
 
   const handleSearch = async () => {
     if (!searchTerm.trim()) return
-    setLoading(true)
     try {
       const { lat, lng, country } = await getCityCoordinates(searchTerm)
       onCitySelect({
@@ -55,8 +54,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onCitySelect }) => {
       if (isMobile) setIsSearchOpen(false)
     } catch (err) {
       console.error('City not found:', err)
-    } finally {
-      setLoading(false)
     }
   }
 
@@ -86,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onCitySelect }) => {
         )}
       </div>
 
-      {/* Search Bar (always visible on desktop, toggleable on mobile) */}
+      {/* Search Bar */}
       <div
         className={`transition-all duration-300 overflow-hidden ${
           isSearchOpen || !isMobile ? 'max-h-40 mt-3 opacity-100' : 'max-h-0 opacity-0'

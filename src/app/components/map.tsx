@@ -1,7 +1,7 @@
 
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -114,14 +114,20 @@ export default function Map({
       </div>
 
       {/* Weather Info Panel */}
-      {weatherData && (
+      {weatherData && selectedCity && (
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
           className="w-full lg:w-80 p-6 bg-white dark:bg-gray-800 text-black dark:text-white overflow-auto"
         >
-          <h2 className="text-xl font-bold mb-4">Weather Breakdown</h2>
+          <h2 className="text-xl font-bold mb-1">
+            {selectedCity.name}, {selectedCity.country}
+          </h2>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+            Weather Breakdown
+          </p>
+
           <div className="flex items-center gap-3 mb-4">
             <AnimatedWeatherIcon
               icon={getIconType(weatherData.description)}
@@ -134,6 +140,7 @@ export default function Map({
               <p className="capitalize text-sm">{weatherData.description}</p>
             </div>
           </div>
+
           <div className="space-y-3 text-sm">
             <p className="flex items-center gap-2">
               <Droplet size={18} /> Humidity: {weatherData.humidity}%
@@ -148,6 +155,7 @@ export default function Map({
           </div>
         </motion.div>
       )}
+
     </div>
   )
 }

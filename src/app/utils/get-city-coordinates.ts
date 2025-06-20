@@ -11,7 +11,7 @@ export async function getCityCoordinates(cityName: string) {
   const data = await res.json()
 
   if (!data || data.length === 0) {
-    throw new Error('City not found')
+    throw new Error('Opps ! City not found try to check the spellings')
   }
 
   const { lat, lon, display_name } = data[0]
