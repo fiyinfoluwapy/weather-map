@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Weather Explorer — Interactive Map with Live Forecasts
 
-## Getting Started
+A powerful, responsive weather app built with **React**, **TypeScript**, and **Next.js**, with a little tweak by integrating **real-time weather data**, interactive map navigation, animations, and responsive UI for all screen sizes.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+> [Live Demo](https://weather-map-eosin.vercel.app/)
+>  [GitHub Repo](https://github.com/fiyinfoluwapy/weather-map/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-  **Interactive Map with Markers** using Leaflet.js
+-  **Live Weather Forecasts** (Today + Tomorrow) via OpenWeather API
+-  **Search any city in the world** with instant map focus
+-  **Animated Weather Icons** that renders based on the weather condition (rain, sun, cloudy, etc.)
+-  **Clickable City Markers** show popups with accurate forecasts
+-  **Dark Mode** support
+-  Fully **responsive UI** for mobile, tablet & desktop
+-  Built with **Next.js 15**, **TypeScript**, **TailwindCSS**, and **Framer Motion**
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **UI Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide-react & react-animated-weather
+- **Maps**: Leaflet.js + OpenStreetMap tiles
+- **Weather API**: OpenWeatherMap
+- **Geocoding API**: OpenStreetMap (via Nominatim)
