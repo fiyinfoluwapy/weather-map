@@ -1,6 +1,6 @@
 export async function getCityCoordinates(cityName: string) {
   const targetUrl = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(cityName)}`
-  const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`
+  const proxyUrl = `https://corsproxy.io/?${targetUrl}`
 
   const res = await fetch(proxyUrl)
 
@@ -11,7 +11,7 @@ export async function getCityCoordinates(cityName: string) {
   const data = await res.json()
 
   if (!data || data.length === 0) {
-    throw new Error('Opps ! City not found try to check the spellings')
+    throw new Error('Oops! City not found. Please check the spelling.')
   }
 
   const { lat, lon, display_name } = data[0]
