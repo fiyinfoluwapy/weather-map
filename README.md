@@ -3,7 +3,7 @@
 A powerful, responsive weather app built with **React**, **TypeScript**, and **Next.js**, with a little tweak by integrating **real-time weather data**, interactive map navigation, animations, and responsive UI for all screen sizes.
 
 
-> [Live Demo]([https://weather-map-eosin.vercel.app](https://weather-map-eosin.vercel.app/))  
+> [Live Demo](https://weather-map-eosin.vercel.app/)
 >  [GitHub Repo](https://github.com/fiyinfoluwapy/weather-map/)
 
 
