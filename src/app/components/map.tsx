@@ -1,4 +1,3 @@
-
 'use client'
 
 import { useEffect, useState } from 'react'
@@ -7,8 +6,10 @@ import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { MapPin, Droplet, Wind, Sun } from 'lucide-react'
 import ReactDOMServer from 'react-dom/server'
-import AnimatedWeatherIcon from 'react-animated-weather'
+import * as AnimatedWeather from 'react-animated-weather'
 import { motion } from 'framer-motion'
+
+const AnimatedWeatherIcon = AnimatedWeather.default
 
 type City = {
   id: string | number
@@ -89,7 +90,7 @@ export default function Map({
           zoom={5}
           scrollWheelZoom
           style={{ height: '100%', width: '100%' }}
-          className='shadow-lg'
+          className="shadow-lg"
         >
           <TileLayer url={tileUrl} />
           <RecenterMap center={center} />
@@ -114,7 +115,7 @@ export default function Map({
       </div>
 
       {/* Weather Info Panel */}
-      {weatherData && selectedCity && (
+      {weatherData && selectedCity ? (
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -154,8 +155,11 @@ export default function Map({
             </p>
           </div>
         </motion.div>
+      ) : (
+        <div className="w-full lg:w-80 p-6 text-center text-sm text-gray-400 dark:text-gray-600">
+          <p>Select a city to view weather info.</p>
+        </div>
       )}
-
     </div>
   )
 }
