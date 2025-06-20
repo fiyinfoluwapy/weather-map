@@ -1,13 +1,13 @@
 declare module 'react-animated-weather' {
-  import { ComponentType } from 'react'
+  import * as React from 'react'
 
-  interface WeatherIconProps {
+  export interface WeatherIconProps {
     icon: string
     color?: string
     size?: number
     animate?: boolean
   }
 
-  const ReactAnimatedWeather: ComponentType<WeatherIconProps>
-  export default ReactAnimatedWeather
+  const AnimatedWeatherIcon: React.FC<WeatherIconProps>
+  export default AnimatedWeatherIcon
 }
